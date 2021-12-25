@@ -18,5 +18,4 @@ function validate(name){
   
   }
 
-exports.Customer = Customer;
-exports.validate = validate;
+module.exports={Customer,validate};

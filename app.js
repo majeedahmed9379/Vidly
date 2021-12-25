@@ -1,11 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+
 const app = express();
 const helmet = require('helmet');
 const morgan = require('morgan');
 const genres = require('./routes/genres');
 const customers = require('./routes/customers');
 const home = require('./routes/home');
+const movies = require('./routes/movies');
+const rentals = require('./routes/rentals');
 mongoose.connect('mongodb://localhost/VIDLY')
     .then(()=>console.log("Connected to database successfully"))
     .catch((err)=>console.log(err.message));
@@ -24,6 +27,8 @@ app.use('/vidly.com',home);
 //Handling genres related requests
 app.use('/vidly.com/api/genres',genres)
 app.use('/vidly.com/api/customers',customers);
+app.use('/vidly.com/api/movies',movies);
+app.use('/vidly.com/api/rentals',rentals);
 const port = 3000;
 app.listen(port,()=>{
     console.log(`Listening on port: ${port}`);
