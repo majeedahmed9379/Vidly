@@ -1,7 +1,6 @@
 const Joi = require('joi');
 const express = require('express');
 const mongoose = require ('mongoose');
-const { route } = require('./genres');
 const router = express.Router();
 const {Customer,validate} = require('../models/customers');
 

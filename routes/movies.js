@@ -83,6 +83,7 @@ function Validate(movie){
         numberInStock:Joi.number().min(0).required(),
         dailyRentalRate:Joi.number().min(0).required()
     });
+    console.log(schema.validate(movie));
     return schema.validate(movie);
 }
 
